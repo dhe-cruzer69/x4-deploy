@@ -1,5 +1,7 @@
 version: 2
 updates:
+  # Scope narrowed: this repository has no pip or npm manifest, so only
+  # the github-actions ecosystem is declared to avoid daily updater failures.
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
@@ -8,13 +10,3 @@ updates:
     groups:
       actions:
         patterns: ["*"]
-  - package-ecosystem: pip
-    directory: "/"
-    schedule:
-      interval: weekly
-    open-pull-requests-limit: 5
-  - package-ecosystem: npm
-    directory: "/"
-    schedule:
-      interval: weekly
-    open-pull-requests-limit: 5
